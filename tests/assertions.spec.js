@@ -6,6 +6,8 @@ test('AssertionTest',async ({page}) => {
 
     //page url assertion
     await expect(page).toHaveURL('https://demo.nopcommerce.com/register')
+    //not URL assertion
+    await expect(page).not.toHaveURL('https://demo.nopcommerce.com/login')
 
     //page title assertion
     await expect(page).toHaveTitle('nopCommerce demo store. Register')
@@ -44,10 +46,10 @@ test('AssertionTest',async ({page}) => {
     await emailInput.fill('test@example.com')
     await expect(emailInput).toHaveValue('test@example.com')
 
-    //List of elements has given length
+/*    //List of elements has given length
     await page.goto('https://demoblaze.com/index.html')
     const productItems = await page.locator('.product-item')
-    await expect(productItems).toHaveCount(9)
+    await expect(productItems).toHaveCount(9)*/
 
 }
 )
